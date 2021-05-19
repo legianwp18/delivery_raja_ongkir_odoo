@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+    <record id="stock_picking" model="ir.ui.view">
+      <field name="name">stock.picking.inherit.view.form</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+            <page string="Informasi Ongkos Kirim">
+                <group>
+                  <field name="provinsi_now" placeholder='Provinsi Sekarang'/>
+                  <field name="kota_now" placeholder='Kota Sekarang'/>
+                </group>
+                <group>
+                  <field name="provinsi" placeholder='Provinsi'/>
+                  <field name="destinasi" placeholder='Kota'/>
+                  <!-- <field name="berat" placeholder='Berat (gram)' default="1000"/> -->
+                </group>
+                <group>
+                  <button string="Cek Ongkir" name="getBiaya" type="object" class="btn btn-primary"/>
+                </group>
+                <group>
+                  <field name="kurir"/>
+                  <field name="layanan"/>
+                  <field name="deskripsi"/>
+                  <field name="harga"/>
+                  <field name="estimasi"/>
+<!-- <field name="berat" placeholder='Berat (gram)' default="1000"/> -->
+                </group>
+            </page>
+        </xpath>
+        
+      </field>
+    </record>
+    <record model="ir.ui.view" id="ongkir_list">
+      <field name="name">List Ongkir</field>
+      <field name="model">ongkir.list</field>
+      <field name="arch" type="xml">
+        <tree default_order='value'>
+          <field name="name"/>
+          <field name="service"/>
+          <field name="description"/>
+          <field name="value"/>
+          <field name="etd"/>
+          <!-- <field name="note"/> -->
+          <button name="pilihLayanan" string="Pilih" type="object"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

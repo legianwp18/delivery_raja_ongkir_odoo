@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+    
+    <record id="provinsi_form" model="ir.ui.view">
+      <field name="name">Form Cek</field>
+      <field name="model">provinsi.list</field>
+     
+      <field name="arch" type="xml">
+        <tree create="false" delete="false" duplicate="false">
+          <!-- <field name="province_id"/> -->
+          <field name="province"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="ongkir.provinsi_list_menu_window" model="ir.actions.act_window">
+      <field name="name">Provinsi</field>
+      <field name="res_model">provinsi.list</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_mode">tree</field>
+      <field name="view_type">form</field>
+      <field name="target">current</field>
+      <field name="view_id" ref="provinsi_form"/>
+    </record>
+    <!-- actions -->
+    <menuitem id="provinsi_list_menu" name="Provinsi" parent="menu_stock_rajaongkir" action="ongkir.provinsi_list_menu_window"/>
+
+  </data>
+</odoo>

@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_api_list,access_api_list,model_api_list,,1,1,1,1
+access_ongkir_list,access_ongkir_list,model_ongkir_list,,1,1,1,1
+access_ongkir_cek,access_ongkir_cek,model_ongkir_cek,,1,1,1,1
+access_ongkir_cek_list,access_ongkir_cek_list,model_ongkir_cek_list,,1,1,1,1
+access_ongkir_tracking,access_ongkir_tracking,model_ongkir_tracking,,1,1,1,1
+access_ongkir_history_resi,access_ongkir_history_resi,model_ongkir_history_resi,,1,1,1,1
+access_ongkir_history_resi_do,access_ongkir_history_resi_do,model_ongkir_history_resi_do,,1,1,1,1
+access_kota_list,access_kota_list,model_kota_list,,1,1,1,1
+access_provinsi_list,access_provinsi_list,model_provinsi_list,,1,1,1,1

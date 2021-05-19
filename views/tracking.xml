@@ -1,0 +1,83 @@
+<odoo>
+  <data>
+    <record id="tracking_form" model="ir.ui.view">
+      <field name="name">Tracking Resi</field>
+      <field name="model">ongkir.tracking</field>
+      <field name="arch" type="xml">
+        <form string="Ongkir">
+          <sheet>
+          <h1 class="hidden-xs">
+            Tracking Resi
+          </h1>
+            <group>
+              <group>
+                <field name="no_resi"/>
+                <field name="kurir" widget="selection" placeholder='Pilih Kurir'/>
+              </group>
+            </group>
+            <footer>
+               <button string="Lacak" name="trackResi" type="object" class="btn btn-primary"/>
+            </footer>
+
+            <notebook>
+               <page string="Detail" name="tracking_detail">
+                  <group>
+                      <group>
+                        <field name="waybill_number"/>
+                        <field name="courier_name"/>
+                      </group>
+                      <group>
+                        <field name="service_code"/>
+                        <field name="waybill_date"/>
+                      </group>
+                  </group>
+                  <group>
+                      <group>
+                       <field name="origin"/>
+                       <field name="shipper_name"/>
+                      </group>
+                      <group>
+                        <field name="destination"/>
+                        <field name="receiver_name"/>
+                      </group>
+                  </group>
+                  <group>
+                      <group>
+                        <field name="status"/>
+                      </group>
+                      <group>
+                        <field name="pod_date"/>
+                        <field name="pod_receiver"/>
+                      </group>
+                  </group>
+               </page>
+               <page string="History" name="tracking_detail_history">
+                  <group>
+                    <field name="tracking_resi_detail" nolabel="1">
+                      <tree string="History Resi" create="false" delete="false" edit="false">
+                        <field name="manifest_code" class="text-center"/>
+                        <field name="manifest_description"/>
+                        <field name="manifest_date" class="text-center"/>
+                        <field name="city_name"/>
+                      </tree>
+                    </field>
+                  </group>
+                </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="ongkir.tracking_resi" model="ir.actions.act_window">
+      <field name="name">Tracking Resi</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">ongkir.tracking</field>
+      <field name="view_mode">form</field>
+      <field name="view_type">form</field>
+      <field name="target">inline</field>
+    </record>
+
+    <menuitem id="tracking_resi_menu" name="Tracking Resi" parent="menu_stock_rajaongkir" action="ongkir.tracking_resi" sequence="2"/>
+
+  </data>
+</odoo>

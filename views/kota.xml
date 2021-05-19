@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    <odoo>
+      <data>
+      </data>
+    </odoo>
+    <record id="kota_form" model="ir.ui.view">
+      <field name="name">Form Cek</field>
+      <field name="model">kota.list</field>
+      <field name="arch" type="xml">
+        <tree create="false" delete="false" duplicate="false">
+          <!-- <field name="city_id"/> -->
+          <!-- <field name="province_id"/> -->
+          <field name="city_name"/>
+          <field name="postal_code"/>
+          <field name="type"/>
+          <field name="province"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="ongkir.kota_list_menu_window" model="ir.actions.act_window">
+      <field name="name">Kota</field>
+      <field name="res_model">kota.list</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_mode">tree</field>
+      <field name="view_type">form</field>
+      <field name="target">current</field>
+      <field name="view_id" ref="kota_form"/>
+    </record>
+    <!-- actions -->
+    <menuitem id="kota_list_menu" name="Kota" parent="menu_stock_rajaongkir" action="ongkir.kota_list_menu_window"/>
+
+  </data>
+</odoo>
